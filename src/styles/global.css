@@ -14,4 +14,7 @@
     #drawer {
         transition: left 300ms;
     }
+    .txt-shadow {
+        text-shadow: 2px 2px 4px black;
+    }
 }
