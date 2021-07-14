@@ -36,7 +36,7 @@ const IndexPage = () => {
         <img src={sovmech} alt="" className="w-full"/>
         <h2 className="font-display absolute bottom-0 z-10 text-center w-full txt-shadow text-4xl text-white">DC-Jam Signs the Soviet Machines</h2>
       </article>
-      <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true}>
+      <Carousel showThumbs={false} showIndicators={false} showStatus={false} interval={10000} infiniteLoop={true} autoPlay={true}>
         <div>
           <img src={sovmechlp} alt="" />
           <p className="legend font-body">Soviet Machines (LP) - 2021</p>
@@ -50,6 +50,10 @@ const IndexPage = () => {
           <p className="legend font-body">What You've Heard Isn't Real (EP) - Porcupine 2018</p>
         </div>
       </Carousel>
+      <footer>
+        <h3 className="font-body my-4 text-white text-center">Social Links Etc</h3>
+        <h4 className="font-body my-4 text-white text-center">©2021 DC-Jam Records. All Rights Reserved. </h4>
+      </footer>
     </div>
   )
 }
