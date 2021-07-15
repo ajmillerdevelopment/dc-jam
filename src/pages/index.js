@@ -2,7 +2,7 @@ import * as React from "react"
 import Drawer from '../comps/Drawer'
 import sovmech from '../images/sovmach.webp'
 import {Carousel} from "react-responsive-carousel"
-import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import goals from '../images/goals.webp'
 import porcupine from '../images/porcupine.webp'
 import sovmechlp from '../images/sovmechlp.webp'
