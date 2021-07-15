@@ -6,7 +6,6 @@ const Drawer = () => {
             <a href="/about" className="font-display block my-1 text-3xl text-white">About</a>
             <a href="/artists" className="font-display block my-1 text-3xl text-white">Artists</a>
             <a href="/catalog" className="font-display block my-1 text-3xl text-white">Catalog</a>
-            <h2 className="font-display my-1 text-3xl text-white">Contact</h2>
             <h3 className="font-body text-white">Social Links etc</h3>
         </nav>
     )
