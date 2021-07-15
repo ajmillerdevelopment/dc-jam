@@ -30,7 +30,7 @@ const IndexPage = () => {
       <MobileHeader expand={expand}/>
       <article className="relative" >
         <img src={sovmech} alt="" className="w-full"/>
-        <h2 className="font-display absolute bottom-0 z-10 text-center w-full txt-shadow text-4xl text-white">DC-Jam Signs the Soviet Machines</h2>
+        <h2 className="font-display absolute bottom-0 z-10 text-center w-full txt-shadow text-3xl text-white">DC-Jam Signs the Soviet Machines</h2>
       </article>
       <Carousel showThumbs={false} showIndicators={false} showStatus={false} interval={10000} infiniteLoop={true} autoPlay={true}>
         <div>

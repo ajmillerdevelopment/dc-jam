@@ -3,8 +3,8 @@ import * as React from 'react'
 const Drawer = () => {
     return(
         <nav id="drawer" className="z-20 h-full fixed drop-shadow w-1/2 bg-highlight-red p-2 top-0 -left-full">
-            <a href="/about" className="font-display my-1 text-3xl text-white">About</a>
-            <h2 className="font-display my-1 text-3xl text-white">Artists</h2>
+            <a href="/about" className="font-display block my-1 text-3xl text-white">About</a>
+            <a href="/artists" className="font-display block my-1 text-3xl text-white">Artists</a>
             <h2 className="font-display my-1 text-3xl text-white">Catalog</h2>
             <h2 className="font-display my-1 text-3xl text-white">Contact</h2>
             <h3 className="font-body text-white">Social Links etc</h3>
