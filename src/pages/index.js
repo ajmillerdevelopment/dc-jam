@@ -29,10 +29,12 @@ const IndexPage = () => {
       <Drawer/>
       <MobileHeader expand={expand}/>
       <article className="relative" >
+        <a href="/post">
         <img src={sovmech} alt="" className="w-full"/>
         <h2 className="font-display absolute bottom-0 z-10 text-center w-full txt-shadow text-3xl text-white">DC-Jam Signs the Soviet Machines</h2>
+        </a>
       </article>
-      <Carousel showThumbs={false} showIndicators={false} showStatus={false} interval={10000} infiniteLoop={true} autoPlay={true}>
+      <Carousel showThumbs={false} swipeable={false} showIndicators={false} showStatus={false} interval={10000} infiniteLoop={true} autoPlay={true}>
         <div>
           <img src={sovmechlp} alt="" />
           <p className="legend font-body">Soviet Machines (LP) - 2021</p>
