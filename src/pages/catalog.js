@@ -27,11 +27,13 @@ const CatalogPage = () => {
             <MobileHeader expand={expand}/>
             <h2 className="font-display text-white text-center mb-4 text-3xl">Catalog</h2>
             <article className="relative" >
+            <a href="/sovmech">
               <img src={sovmech} alt="" className="w-full"/>
               <div className="absolute bottom-0 w-full z-10">
                 <h2 className="font-display text-center w-full txt-shadow text-2xl text-white">The Soviet Machines (LP)</h2>
                 <h3 className="font-display text-center w-full txt-shadow text-xl text-white">The Soviet Machines - 2021</h3>
               </div>
+            </a>
             </article>
             <article className="relative" >
               <img src={goals} alt="" className="w-full"/>

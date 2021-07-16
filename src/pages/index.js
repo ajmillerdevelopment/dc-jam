@@ -36,8 +36,10 @@ const IndexPage = () => {
       </article>
       <Carousel showThumbs={false} swipeable={false} showIndicators={false} showStatus={false} interval={10000} infiniteLoop={true} autoPlay={true}>
         <div>
-          <img src={sovmechlp} alt="" />
-          <p className="legend font-body">Soviet Machines (LP) - 2021</p>
+          <a href="/sovmech">
+            <img src={sovmechlp} alt="" />
+            <p className="legend font-body">Soviet Machines (LP) - 2021</p>            
+          </a>
         </div>
         <div>
           <img src={goals} alt="" />
