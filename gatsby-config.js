@@ -17,5 +17,17 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        url: `https://dcjamrecords.com/index.php?graphql`,
+        schema: {
+          typePrefix: 'Wp'
+        },
+        develop: {
+          hardCacheMediaFiles: true
+        }
+      }
+    }
   ],
 };
