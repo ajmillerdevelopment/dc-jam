@@ -27,8 +27,10 @@ const ArtistsPage = () => {
             <MobileHeader expand={expand}/>
             <h2 className="font-display text-white mb-4 text-center text-3xl">Artists</h2>
             <article className="relative" >
+              <a href="/fishbone">
               <img src={fishbone} alt="" className="w-full"/>
               <h2 className="font-display absolute bottom-0 z-10 text-center w-full txt-shadow text-3xl text-white">Fishbone</h2>
+              </a>
             </article>
             <article className="relative" >
               <img src={tsol} alt="" className="w-full"/>
