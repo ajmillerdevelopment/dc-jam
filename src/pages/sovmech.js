@@ -27,6 +27,21 @@ const SovMech = () => {
             <h2 className="font-display mx-2 text-white text-center text-2xl">The Soviet Machines (LP)</h2>
             <p className="font-display text-white text-center text-xl">The Soviet Machines</p>
             <img src={sovmechlp} alt="" className="w-full my-4"/>
+            <h3 className="font-body text-center m-3 text-white text-xl">Review</h3>
+            
+            <div className="flex flex-col items-center">
+            <button className="text-white font-display bg-highlight-red w-20 h-10 rounded">Buy Now</button>
+            <h3 className="font-body text-center m-3 text-white text-xl">Tracklist</h3>
+            <ol className="list-decimal">
+              <li className="text-white font-body">Get Your Kicks</li>
+              <li className="text-white font-body">You Should Kill Me</li>
+              <li className="text-white font-body">Baby, We're Gonna Die</li>
+              <li className="text-white font-body">2 Shots (To The Back of the Head)</li>
+              <li className="text-white font-body">All We Are</li>
+              <li className="text-white font-body">Better Way</li>
+              <li className="text-white font-body">Bittersweet Angel</li>
+            </ol>
+            </div>
         </div>
     )
 }
