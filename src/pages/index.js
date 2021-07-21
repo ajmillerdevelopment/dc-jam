@@ -25,10 +25,11 @@ const IndexPage = () => {
     }
 }
   return (
-    <div className="root min-h-screen bg-background-black" onClick={(e) => collapse(e.target)}>
+    <div id='root' className="root absolute w-screen min-h-screen sm:bg-street bg-background-black" onClick={(e) => collapse(e.target)}>
       <Drawer/>
       <MobileHeader expand={expand}/>
-      <article className="relative" >
+      <div className="sm:cover-image hidden"></div>
+      {/* <article className="relative" >
         <a href="/post">
         <img src={sovmech} alt="" className="w-full"/>
         <h2 className="font-display absolute bottom-0 z-10 text-center w-full txt-shadow text-3xl text-white">DC-Jam Signs the Soviet Machines</h2>
@@ -49,7 +50,7 @@ const IndexPage = () => {
           <img src={porcupine} alt="" />
           <p className="legend font-body">What You've Heard Isn't Real (EP) - Porcupine 2018</p>
         </div>
-      </Carousel>
+      </Carousel> */}
       <footer>
         <h3 className="font-body my-4 text-white text-center">Social Links Etc</h3>
         <h4 className="font-body my-4 text-white text-center">©2021 DC-Jam Records. All Rights Reserved. </h4>
