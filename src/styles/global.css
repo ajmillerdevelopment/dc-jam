@@ -17,6 +17,9 @@
     .txt-shadow {
         text-shadow: 2px 2px 4px black;
     }
+    body {
+        overflow-x: hidden;
+    }
     .parallax {
         background-image: url('../images/DCJam-StreetSign.jpg');
         min-height: 100vh;
