@@ -7,6 +7,7 @@ import goals from '../images/goals.webp'
 import porcupine from '../images/porcupine.webp'
 import sovmechlp from '../images/sovmechlp.webp'
 import MobileHeader from '../comps/MobileHeader'
+import DesktopHeader from '../comps/DesktopHeader'
 const IndexPage = () => {
   const [open, setOpen] = React.useState(false)
   const expand = () => {
@@ -25,36 +26,50 @@ const IndexPage = () => {
     }
 }
   return (
-    <div id='root' className="root absolute w-screen min-h-screen sm:bg-street bg-background-black" onClick={(e) => collapse(e.target)}>
+    <div id='root' className="root parallax absolute w-screen min-h-screen" onClick={(e) => collapse(e.target)}>
+      <div className="spacer min-h-screen"></div>
       <Drawer/>
       <MobileHeader expand={expand}/>
-      <div className="sm:cover-image hidden"></div>
-      {/* <article className="relative" >
-        <a href="/post">
-        <img src={sovmech} alt="" className="w-full"/>
-        <h2 className="font-display absolute bottom-0 z-10 text-center w-full txt-shadow text-3xl text-white">DC-Jam Signs the Soviet Machines</h2>
-        </a>
-      </article>
-      <Carousel showThumbs={false} swipeable={false} showIndicators={false} showStatus={false} interval={10000} infiniteLoop={true} autoPlay={true}>
-        <div>
-          <a href="/sovmech">
-            <img src={sovmechlp} alt="" />
-            <p className="legend font-body">Soviet Machines (LP) - 2021</p>            
-          </a>
+      <div className="backdrop-filter backdrop-blur-xl">
+      <DesktopHeader/>
+      <div className="flex flex-col justify-center sm:items-start items-center sm:flex-row">
+        <div className="sm:flex sm:flex-col sm:items-center">
+          <h2 className="font-display text-3xl text-white hidden sm:block">News</h2>
+          <Carousel className="sm:max-w-md sm:m-4" dynamicHeight={true} showThumbs={false} swipeable={false} showIndicators={false} showStatus={false} interval={10000} infiniteLoop={true} autoPlay={true}>
+            <div>
+              <a href="/post">
+                <img src={sovmech} alt="" />
+                <p className="legend font-body text-xl">DC-Jam Signs the Soviet Machines</p>
+              </a>
+            </div>
+          </Carousel>
         </div>
-        <div>
-          <img src={goals} alt="" />
-          <p className="legend font-body">#Goals - 2017</p>
+        <div className="sm:flex sm:flex-col sm:items-center">
+          <h2 className="font-display text-3xl text-white hidden sm:block">Latest Releases</h2>
+          <Carousel className="sm:max-w-md sm:m-4" showThumbs={false} swipeable={false} showIndicators={false} showStatus={false} interval={10000} infiniteLoop={true} autoPlay={true}>
+            <div>
+              <a href="/sovmech">
+                <img src={sovmechlp} alt="" />
+                <p className="legend font-body">Soviet Machines (LP) - 2021</p>            
+              </a>
+            </div>
+            <div>
+              <img src={goals} alt="" />
+              <p className="legend font-body">#Goals - 2017</p>
+            </div>
+            <div>
+              <img src={porcupine} alt="" />
+              <p className="legend font-body">What You've Heard Isn't Real (EP) - Porcupine 2018</p>
+            </div>
+          </Carousel>
         </div>
-        <div>
-          <img src={porcupine} alt="" />
-          <p className="legend font-body">What You've Heard Isn't Real (EP) - Porcupine 2018</p>
-        </div>
-      </Carousel> */}
+      </div>
       <footer>
         <h3 className="font-body my-4 text-white text-center">Social Links Etc</h3>
         <h4 className="font-body my-4 text-white text-center">©2021 DC-Jam Records. All Rights Reserved. </h4>
       </footer>
+      </div>
+
     </div>
   )
 }

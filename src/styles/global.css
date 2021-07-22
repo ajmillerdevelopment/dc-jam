@@ -17,7 +17,12 @@
     .txt-shadow {
         text-shadow: 2px 2px 4px black;
     }
-    body {
-        background-color: #0E0E0E;
+    .parallax {
+        background-image: url('../images/DCJam-StreetSign.jpg');
+        min-height: 100vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
