@@ -28,19 +28,15 @@ const IndexPage = () => {
     }
 }
   const scrollLock = () => {
-    if (scrolled) {
-      console.log(`beep`)
-      return
-    }
-    else if (window.scrollY > window.innerHeight && !scrolled) {
+    if (window.scrollY > window.innerHeight) {
       document.getElementById('spacer').classList.remove('sm:block')
       scrolled = true
       console.log(`boop scrolled:${scrolled}`)
       window.scrollTo(0,0)
-      window.removeEventListener('scroll', () => scrollLock())
+      window.removeEventListener('scroll', scrollLock)
     }
   }
-  window.addEventListener('scroll', () => scrollLock())
+  window.addEventListener('scroll', scrollLock)
   return (
     <div id='root' className="root parallax absolute w-screen min-h-screen" onClick={(e) => collapse(e.target)}>
       <div className="sm:hidden bg-background-black w-screen h-screen fixed"></div>
