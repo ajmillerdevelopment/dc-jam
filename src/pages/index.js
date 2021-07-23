@@ -41,9 +41,9 @@ const IndexPage = () => {
   if (isBrowser) {
     const scrollParam = window.location.search.slice(1).split("&")[0].split("=")[1]
     window.addEventListener('scroll', scrollLock)
-  }
-  if (scrollParam === "true"){
+      if (scrollParam === "true"){
     scrolled = true
+  }
   }
   console.log(`Scrolled: ${scrolled}`)
   return (
