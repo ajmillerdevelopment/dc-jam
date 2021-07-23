@@ -2,7 +2,7 @@ import * as React from 'react'
 import Drawer from '../comps/Drawer'
 import MobileHeader from '../comps/MobileHeader'
 import sovmechlp from "../images/sovmechlp.webp"
-
+import DesktopHeader from '../comps/DesktopHeader'
 const SovMech = () => {
     const [open, setOpen] = React.useState(false)
     const expand = () => {
@@ -21,17 +21,18 @@ const SovMech = () => {
       }
   }
     return(
-        <div className="root min-h-screen bg-background-black" onClick={(e) => collapse(e.target)}>
+        <div className="root sm:blurred-bg min-h-screen bg-background-black" onClick={(e) => collapse(e.target)}>
             <Drawer/>
             <MobileHeader expand={expand}/>
-            <h2 className="font-display mx-2 text-white text-center text-2xl">The Soviet Machines (LP)</h2>
-            <p className="font-display text-white text-center text-xl">The Soviet Machines</p>
-            <img src={sovmechlp} alt="" className="w-full my-4"/>
-            <h3 className="font-body text-center m-3 text-white text-xl">Review</h3>
-
+            <DesktopHeader/>
+            <h2 className="font-display m-2 text-white text-center txt-shadow text-3xl">The Soviet Machines (LP)</h2>
+            <p className="font-display text-white text-center txt-shadow text-2xl">The Soviet Machines</p>
             <div className="flex flex-col items-center">
+            <img src={sovmechlp} alt="" className="w-full my-4 shadow-lg rounded sm:max-w-md"/>
+            <h3 className="font-body txt-shadow text-center m-3 text-white text-xl">Review</h3>
             <button className="text-white font-display bg-highlight-red w-20 h-10 rounded">Buy Now</button>
-            <h3 className="font-body text-center m-3 text-white text-xl">Tracklist</h3>
+            <h3 className="font-body text-center txt-shadow m-3 text-white text-xl">Tracklist</h3>
+            <div className="sm:my-container">
             <ol className="list-decimal">
               <li className="text-white text-sm font-body">Get Your Kicks</li>
               <li className="text-white text-sm font-body">You Should Kill Me</li>
@@ -41,6 +42,7 @@ const SovMech = () => {
               <li className="text-white text-sm font-body">Better Way</li>
               <li className="text-white text-sm font-body">Bittersweet Angel</li>
             </ol>
+            </div>
             </div>
         </div>
     )
