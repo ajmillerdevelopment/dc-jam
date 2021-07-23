@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Drawer from '../comps/Drawer'
 import MobileHeader from '../comps/MobileHeader'
-
+import DesktopHeader from '../comps/DesktopHeader'
 const AboutPage = () => {
     const [open, setOpen] = React.useState(false)
     const expand = () => {
@@ -20,13 +20,16 @@ const AboutPage = () => {
       }
   }
     return(
-        <div className="root min-h-screen bg-background-black" onClick={(e) => collapse(e.target)}>
+        <div className="root sm:blurred-bg min-h-screen w-screen flex flex-col items-center bg-background-black" onClick={(e) => collapse(e.target)}>
             <Drawer/>
             <MobileHeader expand={expand}/>
-            <h2 className="font-display text-white text-center text-3xl">About</h2>
-            <p className="font-body m-6 text-white">DC-Jam Records is an American independent record label founded in 2006 by President Darron Hemann, that focuses primarily on the genres of Punk, Ska, and Experimental music. The roster features well-known classic punk rock artists such as: The Adicts, Fishbone, Richie Ramone, T.S.O.L., JFA and Down By Law, as well as several twenty-first century up and comers.</p>
-            <p className="font-body m-6 text-white">With an enduring commitment to the DIY ethos, DC-Jam caters to the new “independent” minded landscape of the music business, and its changing climate. The DCJamRecords.com site has become a hub for the label’s online community, directing fans to sites like YouTube, Tumblr and Facebook, where their bands have an active presence. The label continues to grow through a traditional and nontraditional record retail presence that spans the world.</p>
-            <p className="font-body m-6 text-white">DC-Jam Records 1722 S. Glenstone Ave. Suite HH #400 Springfield, MO 65804. <br/> <a href="mailto:" className="underline text-highlight-red">Submissions@DCJamRecords.com</a> </p>
+            <DesktopHeader/>
+            <h2 className="font-display m-4 text-white text-center txt-shadow text-3xl">About</h2>
+            <div className="flex flex-col sm:my-container items-center">
+            <p className="font-body m-6 max-w-prose text-white">DC-Jam Records is an American independent record label founded in 2006 by President Darron Hemann, that focuses primarily on the genres of Punk, Ska, and Experimental music. The roster features well-known classic punk rock artists such as: The Adicts, Fishbone, Richie Ramone, T.S.O.L., JFA and Down By Law, as well as several twenty-first century up and comers.</p>
+            <p className="font-body m-6 max-w-prose text-white">With an enduring commitment to the DIY ethos, DC-Jam caters to the new “independent” minded landscape of the music business, and its changing climate. The DCJamRecords.com site has become a hub for the label’s online community, directing fans to sites like YouTube, Tumblr and Facebook, where their bands have an active presence. The label continues to grow through a traditional and nontraditional record retail presence that spans the world.</p>
+            <p className="font-body m-6 max-w-prose text-white">DC-Jam Records 1722 S. Glenstone Ave. Suite HH #400 Springfield, MO 65804. <br/> <a href="mailto:" className="underline text-highlight-red">Submissions@DCJamRecords.com</a> </p>
+            </div>
         </div>
     )
 }

@@ -31,15 +31,13 @@ const IndexPage = () => {
     if (window.scrollY > window.innerHeight) {
       document.getElementById('spacer').classList.remove('sm:block')
       scrolled = true
-      console.log(`boop scrolled:${scrolled}`)
       window.scrollTo(0,0)
       window.removeEventListener('scroll', scrollLock)
     }
   }
   window.addEventListener('scroll', scrollLock)
   return (
-    <div id='root' className="root parallax absolute w-screen min-h-screen" onClick={(e) => collapse(e.target)}>
-      <div className="sm:hidden bg-background-black w-screen h-screen fixed"></div>
+    <div id='root' className="root sm:parallax bg-background-black absolute w-screen min-h-screen" onClick={(e) => collapse(e.target)}>
       <div id="spacer" className="h-screen hidden sm:block"></div>
       <Drawer/>
       <MobileHeader expand={expand} />
@@ -82,5 +80,4 @@ const IndexPage = () => {
     </div>
   )
 }
-
 export default IndexPage

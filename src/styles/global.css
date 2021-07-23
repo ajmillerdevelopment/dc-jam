@@ -20,12 +20,27 @@
     body {
         overflow-x: hidden;
     }
-    .parallax {
-        background-image: url('../images/DCJam-StreetSign.jpg');
-        min-height: 100vh;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    @variants responsive {
+        .parallax {
+            background-image: url('../images/DCJam-StreetSign.jpg');
+            min-height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .blurred-bg {
+            background-image: url('../images/DCJam-StreetSignBlur.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .my-container {
+            padding: 10px;
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 10px;
+            max-width: 60%;
+        }
     }
 }
