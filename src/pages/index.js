@@ -37,7 +37,8 @@ const IndexPage = () => {
     }
   }
   //Avoids build error with Gatsby
-  if (window) {
+  const isBrowser = typeof window !== "undefined"
+  if (isBrowser) {
     const scrollParam = window.location.search.slice(1).split("&")[0].split("=")[1]
     window.addEventListener('scroll', scrollLock)
   }
