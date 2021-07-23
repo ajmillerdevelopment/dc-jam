@@ -27,7 +27,7 @@ const ArtistsPage = () => {
             <Drawer/>
             <MobileHeader expand={expand}/>
             <DesktopHeader/>
-            <h2 className="font-display text-white mb-4 text-center txt-shadow text-3xl">Artists</h2>
+            <h2 className="font-display text-white my-4 text-center txt-shadow text-3xl">Artists</h2>
             <div className="flex flex-col justify-center sm:flex-row sm:flex-wrap">
             <article className="relative shadow-lg sm:m-4 sm:max-w-md" >
               <a href="/fishbone">
