@@ -35,6 +35,51 @@ const IndexPage = () => {
       window.removeEventListener('scroll', scrollLock)
     }
   }
+  const scrollParam = window.location.search.slice(1).split("&")[0].split("=")[1]
+  if (scrollParam === "true") {
+    return (
+      <div id='root' className="root sm:parallax bg-background-black absolute w-screen min-h-screen" onClick={(e) => collapse(e.target)}>
+        <Drawer/>
+        <MobileHeader expand={expand} />
+        <div className="backdrop-filter backdrop-blur min-h-screen pb-10">
+        <DesktopHeader/>
+        <div className="flex flex-col justify-center items-center">
+        <h2 className="font-display text-center txt-shadow text-4xl hidden sm:block mt-4 text-white">News</h2>
+        <article className="relative shadow-lg sm:m-4 sm:max-w-md" >
+          <a href="/post">
+          <img src={sovmech} alt="" className="w-full sm:rounded"/>
+          <h3 className="font-display absolute top-2 z-10 text-center w-full txt-shadow text-3xl text-white">DC-Jam Signs the Soviet Machines</h3>
+          </a>
+        </article>
+          <div className="sm:flex sm:flex-col sm:items-center">
+            <h2 className="font-display text-3xl text-white hidden txt-shadow sm:block">Latest Releases</h2>
+            <Carousel className="sm:max-w-md sm:m-4 shadow-lg" showThumbs={false} swipeable={false} showIndicators={false} showStatus={false} interval={10000} infiniteLoop={true} autoPlay={true}>
+              <div>
+                <a href="/sovmech">
+                  <img src={sovmechlp} alt="" />
+                  <p className="legend font-body">Soviet Machines (LP) - 2021</p>            
+                </a>
+              </div>
+              <div>
+                <img src={goals} alt="" />
+                <p className="legend font-body">#Goals - 2017</p>
+              </div>
+              <div>
+                <img src={porcupine} alt="" />
+                <p className="legend font-body">What You've Heard Isn't Real (EP) - Porcupine 2018</p>
+              </div>
+            </Carousel>
+          </div>
+        </div>
+        <footer>
+          <h3 className="font-body my-4 text-white sm:text-black text-center">Social Links Etc</h3>
+          <h4 className="font-body my-4 text-white sm:text-black text-center">©2021 DC-Jam Records. All Rights Reserved. </h4>
+          <p className="font-body my-4 text-xs hidden sm:block sm:text-black text-center">Thanks to White.Rainforest ∙ 易雨白林. @whiterainforest for making this photo available freely on Unsplash</p>
+        </footer>
+        </div>
+      </div>
+    )
+  } else {
   window.addEventListener('scroll', scrollLock)
   return (
     <div id='root' className="root sm:parallax bg-background-black absolute w-screen min-h-screen" onClick={(e) => collapse(e.target)}>
@@ -79,5 +124,5 @@ const IndexPage = () => {
       </div>
     </div>
   )
-}
+}}
 export default IndexPage

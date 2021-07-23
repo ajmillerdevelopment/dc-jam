@@ -4,7 +4,7 @@ const DesktopHeader = () => {
     return(
       <header className="sm:flex sm:flex-col w-screen shadow-lg pb-2 bg-highlight-red hidden">
       <div className="sm:flex justify-around items-center flex-row">
-      <a href="/">
+      <a href="/?scrolled=true">
         <h1 className="font-display text-white text-7xl txt-shadow">DC-Jam<img src={logoDesk} alt="" className="logo-mobile inline mx-2 pb-1"/>Records</h1>
       </a>
       </div>
