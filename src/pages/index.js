@@ -36,11 +36,14 @@ const IndexPage = () => {
       window.removeEventListener('scroll', scrollLock)
     }
   }
-  const scrollParam = window.location.search.slice(1).split("&")[0].split("=")[1]
+  //Avoids build error with Gatsby
+  if (window) {
+    const scrollParam = window.location.search.slice(1).split("&")[0].split("=")[1]
+    window.addEventListener('scroll', scrollLock)
+  }
   if (scrollParam === "true"){
     scrolled = true
   }
-  window.addEventListener('scroll', scrollLock)
   console.log(`Scrolled: ${scrolled}`)
   return (
     <div id='root' className="root sm:parallax bg-background-black absolute w-screen min-h-screen" onClick={(e) => collapse(e.target)}>
