@@ -4,6 +4,7 @@ import MobileHeader from '../comps/MobileHeader'
 import DesktopHeader from '../comps/DesktopHeader'
 import {graphql} from 'gatsby'
 import Artist from '../comps/Artist'
+import Meta from '../comps/Meta'
 const ArtistsPage = ({data}) => {
     const [open, setOpen] = React.useState(false)
     const expand = () => {
@@ -28,6 +29,7 @@ const ArtistsPage = ({data}) => {
   console.log(artistData)
     return(
         <div className="root sm:blurred-bg min-h-screen bg-background-black" onClick={(e) => collapse(e.target)}>
+            <Meta/>
             <Drawer/>
             <MobileHeader expand={expand}/>
             <DesktopHeader/>

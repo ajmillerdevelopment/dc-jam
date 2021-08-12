@@ -2,6 +2,7 @@ import * as React from 'react'
 import Drawer from '../comps/Drawer'
 import MobileHeader from '../comps/MobileHeader'
 import DesktopHeader from '../comps/DesktopHeader'
+import Meta from '../comps/Meta'
 const Post = ({pageContext}) => {
     const [open, setOpen] = React.useState(false)
     const expand = () => {
@@ -26,6 +27,7 @@ const Post = ({pageContext}) => {
   if (pageContext.image) {
     return(
       <div className="root sm:blurred-bg min-h-screen w-screen flex flex-col items-center bg-background-black" onClick={(e) => collapse(e.target)}>
+      <Meta/>
       <Drawer/>
       <MobileHeader expand={expand}/>
       <DesktopHeader/>

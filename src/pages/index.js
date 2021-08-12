@@ -7,6 +7,7 @@ import DesktopHeader from '../comps/DesktopHeader'
 import Spacer from '../comps/Spacer'
 import {graphql} from 'gatsby'
 import Article from '../comps/Article'
+import Meta from '../comps/Meta'
 const IndexPage = ({data}) => {
   const [open, setOpen] = React.useState(false)
   // const [scrolled, setScrolled] = React.useState(false)
@@ -57,6 +58,7 @@ const IndexPage = ({data}) => {
   })
   return (
     <div id='root' className="root sm:parallax bg-background-black absolute w-screen min-h-screen" onClick={(e) => collapse(e.target)}>
+      <Meta/>
       <Drawer/>
       <MobileHeader expand={expand} />
       <Spacer scroll={scrolled}/>
