@@ -1,15 +1,13 @@
 import * as React from "react"
 import Drawer from '../comps/Drawer'
-import sovmech from '../images/sovmach.webp'
 import {Carousel} from "react-responsive-carousel"
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import goals from '../images/goals.webp'
-import porcupine from '../images/porcupine.webp'
-import sovmechlp from '../images/sovmechlp.webp'
 import MobileHeader from '../comps/MobileHeader'
 import DesktopHeader from '../comps/DesktopHeader'
 import Spacer from '../comps/Spacer'
-const IndexPage = () => {
+import {graphql} from 'gatsby'
+import Article from '../comps/Article'
+const IndexPage = ({data}) => {
   const [open, setOpen] = React.useState(false)
   // const [scrolled, setScrolled] = React.useState(false)
   let scrolled = false
@@ -45,7 +43,18 @@ const IndexPage = () => {
     scrolled = true
   }
   }
-  console.log(`Scrolled: ${scrolled}`)
+  const articleData = data.allWpPost.nodes
+  const articles = articleData.map((elem) => {
+    if (elem.featuredImage) {
+      return(<Article containsImage={true} content={elem.content} key={elem.databaseId} slug={elem.slug} image={elem.featuredImage.node.sourceUrl} altText={elem.featuredImage.node.altText} title={elem.title} />)
+    } else {
+      return(<Article containsImage={false} content={elem.content} key={elem.databaseId} slug={elem.slug} title={elem.title} />)
+    }
+  })
+  const latestReleaseData = data.allWpRelease.nodes
+  const releaseSlides = latestReleaseData.map((elem) => {
+    return(<div key={elem.databaseId}><a href={elem.slug}><img src={elem.featuredImage.node.sourceUrl} alt={elem.featuredImage.node.altText} /><p className="legend font-body">{elem.title}</p></a></div>)
+  })
   return (
     <div id='root' className="root sm:parallax bg-background-black absolute w-screen min-h-screen" onClick={(e) => collapse(e.target)}>
       <Drawer/>
@@ -55,29 +64,11 @@ const IndexPage = () => {
       <DesktopHeader/>
       <div className="flex flex-col justify-center items-center">
       <h2 className="font-display text-center txt-shadow text-4xl hidden sm:block mt-4 text-white">News</h2>
-      <article className="relative shadow-lg sm:m-4 sm:max-w-md" >
-        <a href="/post">
-        <img src={sovmech} alt="" className="w-full sm:rounded"/>
-        <h3 className="font-display absolute top-2 z-10 text-center w-full txt-shadow text-3xl text-white">DC-Jam Signs the Soviet Machines</h3>
-        </a>
-      </article>
+      {articles}
         <div className="sm:flex sm:flex-col sm:items-center">
           <h2 className="font-display text-3xl text-white hidden txt-shadow sm:block">Latest Releases</h2>
           <Carousel className="sm:max-w-md sm:m-4 shadow-lg" showThumbs={false} swipeable={false} showIndicators={false} showStatus={false} interval={10000} infiniteLoop={true} autoPlay={true}>
-            <div>
-              <a href="/sovmech">
-                <img src={sovmechlp} alt="" />
-                <p className="legend font-body">Soviet Machines (LP) - 2021</p>            
-              </a>
-            </div>
-            <div>
-              <img src={goals} alt="" />
-              <p className="legend font-body">#Goals - 2017</p>
-            </div>
-            <div>
-              <img src={porcupine} alt="" />
-              <p className="legend font-body">What You've Heard Isn't Real (EP) - Porcupine 2018</p>
-            </div>
+            {releaseSlides}
           </Carousel>
         </div>
       </div>
@@ -91,3 +82,33 @@ const IndexPage = () => {
   )
 }
 export default IndexPage
+export const query = graphql`
+query indexQuery {
+  allWpPost {
+    nodes {
+      title
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+      content
+      slug
+    }
+  }
+  allWpRelease(sort: {fields: modified, order: DESC}, limit: 3) {
+    nodes {
+      title
+      slug
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+    }
+  }
+}
+
+`

@@ -1,11 +1,10 @@
 import * as React from 'react'
 import Drawer from '../comps/Drawer'
 import MobileHeader from '../comps/MobileHeader'
-import fishbone from '../images/fishbone.jpg'
-import tsol from '../images/tsol.jpg'
-import richie from '../images/richie.jpg'
 import DesktopHeader from '../comps/DesktopHeader'
-const ArtistsPage = () => {
+import {graphql} from 'gatsby'
+import Artist from '../comps/Artist'
+const ArtistsPage = ({data}) => {
     const [open, setOpen] = React.useState(false)
     const expand = () => {
       const drawer = document.getElementById('drawer')
@@ -22,6 +21,11 @@ const ArtistsPage = () => {
         setOpen(false)
       }
   }
+  const artistData = data.allWpArtist.nodes
+  const artists = artistData.map((node) => {
+    return(<Artist key={node.databaseId} slug={node.slug} title={node.title} image={node.featuredImage.node.sourceUrl} alt={node.featuredImage.node.altText} />)
+  })
+  console.log(artistData)
     return(
         <div className="root sm:blurred-bg min-h-screen bg-background-black" onClick={(e) => collapse(e.target)}>
             <Drawer/>
@@ -29,22 +33,26 @@ const ArtistsPage = () => {
             <DesktopHeader/>
             <h2 className="font-display text-white my-4 text-center txt-shadow text-3xl">Artists</h2>
             <div className="flex flex-col justify-center sm:flex-row sm:flex-wrap">
-            <article className="relative shadow-lg sm:m-4 sm:max-w-md" >
-              <a href="/fishbone">
-              <img src={fishbone} alt="" className="w-full sm:rounded"/>
-              <h2 className="font-display absolute bottom-0 z-10 text-center w-full txt-shadow text-3xl text-white">Fishbone</h2>
-              </a>
-            </article>
-            <article className="relative shadow-lg sm:m-4 sm:max-w-md" >
-              <img src={tsol} alt="" className="w-full rounded"/>
-              <h2 className="font-display absolute bottom-0 z-10 text-center w-full txt-shadow text-3xl text-white">T.S.O.L.</h2>
-            </article>
-            <article className="relative shadow-lg sm:m-4 sm:max-w-md" >
-              <img src={richie} alt="" className="w-full rounded"/>
-              <h2 className="font-display absolute bottom-0 z-10 text-center w-full txt-shadow text-3xl text-white">Richie Ramone</h2>
-            </article>
+              {artists}
             </div>
         </div>
     )
 }
 export default ArtistsPage
+export const query = graphql`
+query artistsQuery {
+  allWpArtist {
+    nodes {
+      title
+      slug
+      databaseId
+      featuredImage {
+        node {
+          altText
+          sourceUrl
+        }
+      }
+    }
+  }
+}
+`

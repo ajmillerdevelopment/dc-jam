@@ -20,6 +20,11 @@
     body {
         overflow-x: hidden;
     }
+    .wp-content * {
+        font-family: 'Oswald', 'Arial', 'sans-serif';
+        color: white;
+        padding: 10px;
+    }
     @variants responsive {
         .parallax {
             background-image: url('../images/DCJam-StreetSign.jpg');
@@ -38,7 +43,7 @@
         }
         .my-container {
             padding: 20px;
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0,0,0,0.8);
             border-radius: 10px;
             max-width: 60%;
         }
