@@ -31,7 +31,7 @@ const Post = ({pageContext}) => {
       <Drawer/>
       <MobileHeader expand={expand}/>
       <DesktopHeader/>
-      <h2 className="font-display m-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h2>
+      <h3 className="font-display m-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h3>
       <img src={pageContext.image} alt={pageContext.alt} className="w-full sm:max-w-md m-4 rounded shadow-lg"/>
       <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center"></div>
   </div>
@@ -43,7 +43,7 @@ const Post = ({pageContext}) => {
       <Drawer/>
       <MobileHeader expand={expand}/>
       <DesktopHeader/>
-      <h2 className="font-display m-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h2>
+      <h3 className="font-display m-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h3>
       <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center"></div>
   </div>
     )
