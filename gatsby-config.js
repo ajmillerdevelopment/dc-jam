@@ -19,8 +19,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        // url: process.env.WPGRAPHQL_URL || `http://dcjamrecords.com/?graphql`,
-        url: `http://localhost:8001/?graphql`,
+        url: process.env.WPGRAPHQL_URL,
         verbose: true,
         debug: {
           graphql: {
