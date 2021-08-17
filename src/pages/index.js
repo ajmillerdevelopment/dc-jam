@@ -86,7 +86,7 @@ const IndexPage = ({data}) => {
 export default IndexPage
 export const query = graphql`
 query indexQuery {
-  allWpPost {
+  allWpPost(sort: {fields: modified, order: DESC}) {
     nodes {
       title
       featuredImage {

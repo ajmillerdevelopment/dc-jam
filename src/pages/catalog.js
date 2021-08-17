@@ -43,7 +43,7 @@ const CatalogPage = ({data}) => {
 export default CatalogPage
 export const query = graphql`
 query releasesQuery {
-  allWpRelease {
+  allWpRelease(sort: {fields: modified, order: DESC}) {
     nodes {
       title
       slug
