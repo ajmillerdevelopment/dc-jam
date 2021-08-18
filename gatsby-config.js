@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: `https://dcjamrecords.com/?graphql`,
+        url: `https://dcjamrecords.com/blog/?graphql`,
         debug: {
           graphql: {
             showQueryOnError: true
