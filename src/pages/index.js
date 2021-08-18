@@ -75,7 +75,6 @@ const IndexPage = ({data}) => {
         </div>
       </div>
       <footer>
-        <h3 className="font-body my-4 text-white sm:text-black text-center">Social Links Etc</h3>
         <h4 className="font-body my-4 text-white sm:text-black text-center">©2021 DC-Jam Records. All Rights Reserved. </h4>
         <p className="font-body my-4 text-xs hidden sm:block sm:text-black text-center">Thanks to White.Rainforest ∙ 易雨白林. @whiterainforest for making this photo available freely on Unsplash</p>
       </footer>
