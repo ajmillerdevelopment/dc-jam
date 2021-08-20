@@ -28,6 +28,16 @@ exports.createPages = async ({graphql, actions}) => {
                 sourceUrl
               }
             }
+            artistFields {
+              website
+              twitter
+              spotify
+              soundcloud
+              myspace
+              lastfm
+              instagram
+              facebook
+            }
           }
         }
         allWpRelease {
@@ -81,7 +91,8 @@ exports.createPages = async ({graphql, actions}) => {
                   title: node.title,
                   content: node.content,
                   image: node.featuredImage.node.sourceUrl,
-                  alt: node.featuredImage.node.altText
+                  alt: node.featuredImage.node.altText,
+                  fields: node.artistFields
               }
           })
       } else {
@@ -91,7 +102,8 @@ exports.createPages = async ({graphql, actions}) => {
               context: {
                   slug: node.slug,
                   title: node.title,
-                  content: node.content
+                  content: node.content,
+                  fields: node.artistFields
               }
           })
       }
