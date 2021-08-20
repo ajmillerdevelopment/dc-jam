@@ -75,7 +75,7 @@ exports.createPages = async ({graphql, actions}) => {
       if (node.featuredImage) {
           createPage({
               path: node.slug,
-              component: path.resolve('./src/templates/post.js'),
+              component: path.resolve('./src/templates/artist.js'),
               context: {
                   slug: node.slug,
                   title: node.title,
@@ -87,7 +87,7 @@ exports.createPages = async ({graphql, actions}) => {
       } else {
           createPage({
               path: node.slug,
-              component: path.resolve('./src/templates/post.js'),
+              component: path.resolve('./src/templates/artist.js'),
               context: {
                   slug: node.slug,
                   title: node.title,
@@ -100,7 +100,7 @@ exports.createPages = async ({graphql, actions}) => {
     if (node.featuredImage) {
         createPage({
             path: node.slug,
-            component: path.resolve('./src/templates/post.js'),
+            component: path.resolve('./src/templates/release.js'),
             context: {
                 slug: node.slug,
                 title: node.title,
@@ -112,7 +112,7 @@ exports.createPages = async ({graphql, actions}) => {
     } else {
         createPage({
             path: node.slug,
-            component: path.resolve('./src/templates/post.js'),
+            component: path.resolve('./src/templates/release.js'),
             context: {
                 slug: node.slug,
                 title: node.title,
