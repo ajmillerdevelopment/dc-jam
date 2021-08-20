@@ -64,6 +64,12 @@ const IndexPage = ({data}) => {
       <Spacer scroll={scrolled}/>
       <div className="backdrop-filter backdrop-blur min-h-screen pb-10">
       <DesktopHeader/>
+      <div className="flex sm:hidden pt-3 flex-row justify-center">
+          <a href="https://www.facebook.com/people/Darron-Hemann/100071351705122/"><i className="fab mx-2 fa-facebook-f"></i></a>
+          <a href="https://twitter.com/dcjamrecords"><i className="fab mx-2 fa-twitter"></i></a>
+          <a href="https://soundcloud.com/dc-jam-records"><i className="fab mx-2 fa-soundcloud"></i></a>
+          <a href="https://www.instagram.com/DCJamRecords"><i className="fab mx-2 fa-instagram"></i></a>
+        </div>
       <div className="flex flex-col justify-center items-center">
       <h2 className="font-display text-center txt-shadow text-4xl hidden sm:block mt-4 text-white">News</h2>
       {articles}
