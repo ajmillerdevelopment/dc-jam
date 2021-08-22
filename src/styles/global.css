@@ -23,7 +23,7 @@
     .wp-content * {
         font-family: 'Oswald', 'Arial', 'sans-serif';
         color: white;
-        padding: 10px;
+        padding: 2px 10px;
     }
     .fab {
         color: white;
@@ -56,6 +56,9 @@
             background-color: #EE3450;
             border-radius: 10px;
             max-width: 60%;            
+        }
+        .max-h-custom {
+            max-height: 30rem;
         }
     }
 }
