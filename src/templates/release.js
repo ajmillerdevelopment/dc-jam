@@ -23,9 +23,12 @@ const Release = ({pageContext}) => {
   const createMarkup = () => {
     return  {__html: pageContext.content}
   }
-  const buyLinks = pageContext.buylinks.map((link) => {
-    return(<a href={link.url}><p className="font-body underline text-white">{link.site}</p></a>)
-  })
+  let buyLinks = []
+  if (pageContext.buylinks) {
+    buyLinks = pageContext.buylinks.map((link) => {
+      return(<a href={link.url}><p className="font-body underline text-white">{link.site}</p></a>)
+    })
+  }
   if (pageContext.image) {
     return(
       <div className="root sm:blurred-bg min-h-screen w-screen flex flex-col items-center bg-background-black" onClick={(e) => collapse(e.target)}>
