@@ -104,7 +104,7 @@ query indexQuery {
       slug
     }
   }
-  allWpRelease(sort: {fields: modified, order: DESC}, limit: 3) {
+  allWpRelease(sort: {fields: date, order: DESC}, limit: 3) {
     nodes {
       title
       slug

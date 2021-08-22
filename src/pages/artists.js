@@ -43,7 +43,7 @@ const ArtistsPage = ({data}) => {
 export default ArtistsPage
 export const query = graphql`
 query artistsQuery {
-  allWpArtist(sort: {fields: modified, order: DESC}) {
+  allWpArtist(sort: {fields: date, order: DESC}) {
     nodes {
       title
       slug
