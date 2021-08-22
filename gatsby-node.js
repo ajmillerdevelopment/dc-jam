@@ -46,6 +46,12 @@ exports.createPages = async ({graphql, actions}) => {
             title
             slug
             content
+            releaseFields {
+              buylinks {
+                site
+                url
+              }
+            }
             featuredImage {
               node {
                 altText
@@ -118,7 +124,8 @@ exports.createPages = async ({graphql, actions}) => {
                 title: node.title,
                 content: node.content,
                 image: node.featuredImage.node.sourceUrl,
-                alt: node.featuredImage.node.altText
+                alt: node.featuredImage.node.altText,
+                buylinks: node.releaseFields.buylinks
             }
         })
     } else {
@@ -128,7 +135,8 @@ exports.createPages = async ({graphql, actions}) => {
             context: {
                 slug: node.slug,
                 title: node.title,
-                content: node.content
+                content: node.content,
+                buylinks: node.releaseFields.buylinks
             }
         })
     }

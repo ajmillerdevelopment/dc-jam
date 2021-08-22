@@ -23,7 +23,9 @@ const Release = ({pageContext}) => {
   const createMarkup = () => {
     return  {__html: pageContext.content}
   }
-  console.log(pageContext)
+  const buyLinks = pageContext.buylinks.map((link) => {
+    return(<a href={link.url}><p className="font-body underline text-white">{link.site}</p></a>)
+  })
   if (pageContext.image) {
     return(
       <div className="root sm:blurred-bg min-h-screen w-screen flex flex-col items-center bg-background-black" onClick={(e) => collapse(e.target)}>
@@ -33,6 +35,10 @@ const Release = ({pageContext}) => {
       <DesktopHeader/>
       <h3 className="font-display m-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h3>
       <img src={pageContext.image} alt={pageContext.alt} className="w-full sm:max-w-md m-4 rounded shadow-lg"/>
+      <div className="my-container-red w-full flex flex-col">
+        <h4 className="font-display text-white text-center txt-shadow text-2xl pb-1">Buy Now</h4>
+        {buyLinks}
+      </div>
       <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center"></div>
   </div>
 

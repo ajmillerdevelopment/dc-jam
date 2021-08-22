@@ -51,5 +51,11 @@
             border-radius: 10px;
             max-width: 60%;
         }
+        .my-container-red {
+            padding: 20px;
+            background-color: #EE3450;
+            border-radius: 10px;
+            max-width: 60%;            
+        }
     }
 }
