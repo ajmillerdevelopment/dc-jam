@@ -32,8 +32,8 @@ const Post = ({pageContext}) => {
       <MobileHeader expand={expand}/>
       <DesktopHeader/>
       <h3 className="font-display m-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h3>
-      <img src={pageContext.image} alt={pageContext.alt} className="w-full sm:max-w-md m-4 rounded shadow-lg"/>
-      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center"></div>
+      <img src={pageContext.image} alt={pageContext.alt} className="sm:max-w-2xl m-4 rounded shadow-lg"/>
+      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center mb-4"></div>
   </div>
 
     )
@@ -44,7 +44,7 @@ const Post = ({pageContext}) => {
       <MobileHeader expand={expand}/>
       <DesktopHeader/>
       <h3 className="font-display m-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h3>
-      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center"></div>
+      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center mb-4"></div>
   </div>
     )
   }

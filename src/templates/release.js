@@ -35,11 +35,11 @@ const Release = ({pageContext}) => {
       <DesktopHeader/>
       <h3 className="font-display m-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h3>
       <img src={pageContext.image} alt={pageContext.alt} className="w-full sm:max-w-md m-4 rounded shadow-lg"/>
-      <div className="my-container-red w-full flex flex-col">
+      <div className="my-container-red w-60 shadow-lg flex flex-col">
         <h4 className="font-display text-white text-center txt-shadow text-2xl pb-1">Buy Now</h4>
         {buyLinks}
       </div>
-      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center"></div>
+      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col m-4 sm:my-container items-center"></div>
   </div>
 
     )
@@ -50,7 +50,7 @@ const Release = ({pageContext}) => {
       <MobileHeader expand={expand}/>
       <DesktopHeader/>
       <h3 className="font-display m-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h3>
-      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center"></div>
+      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content m-4 flex-col sm:my-container items-center"></div>
   </div>
     )
   }

@@ -59,7 +59,7 @@ if (pageContext.fields.twitter) {
       <h3 className="font-display mt-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h3>
       <div>{icons}</div>
       <img src={pageContext.image} alt={pageContext.alt} className="w-full sm:max-w-md m-4 rounded shadow-lg"/>
-      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center"></div>
+      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content mb-4 flex-col sm:w-4/6 sm:my-container items-center"></div>
   </div>
 
     )
@@ -70,7 +70,7 @@ if (pageContext.fields.twitter) {
       <MobileHeader expand={expand}/>
       <DesktopHeader/>
       <h3 className="font-display m-4 text-white text-center txt-shadow text-3xl">{pageContext.title}</h3>
-      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content flex-col sm:my-container items-center"></div>
+      <div dangerouslySetInnerHTML={createMarkup()} className="flex wp-content mb-4 flex-col sm:w-4/6 sm:my-container items-center"></div>
   </div>
     )
   }

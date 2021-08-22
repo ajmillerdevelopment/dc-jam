@@ -3,7 +3,7 @@ import drawerIcon from '../images/drawer.svg'
 import logoMobile from '../images/DCJam-megaphone-white.png'
 const MobileHeader = (props) => {
     return(
-      <header className="flex flex-col z-10 relative pt-5 sm:hidden">
+      <header className="flex w-full flex-col z-10 relative pt-5 sm:hidden">
         <div className="flex justify-evenly w-full items-center flex-row">
           <img src={drawerIcon} alt="" className="drawer-icon" onClick={() => props.expand()}/>
           <a href="/">

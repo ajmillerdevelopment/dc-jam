@@ -71,7 +71,7 @@ const IndexPage = ({data}) => {
           <a href="https://www.instagram.com/DCJamRecords"><i className="fab mx-2 fa-instagram"></i></a>
         </div>
       <div className="flex flex-col justify-center items-center">
-      <h2 className="font-display text-center txt-shadow text-4xl hidden sm:block mt-4 text-white">News</h2>
+      <h2 className="font-display text-center txt-shadow text-6xl hidden sm:block mt-4 text-white">News</h2>
       {articles}
         <div className="sm:flex sm:flex-col sm:items-center">
           <h2 className="font-display text-3xl text-white hidden txt-shadow sm:block">Latest Releases</h2>
