@@ -1,10 +1,4 @@
-I was commissioned to create a new front-end for DC Jam Records (https://dcjamrecords.com/). 
-
-This will be a Gatsby.js project styled with Tailwind and using a Wordpress backend (a first for me.)
-
-https://dev.opera.com/articles/native-responsive-images/
-
-TWEAKS:
-Fix Release/Artist order
-Index page layout/spacing
-Double-check mobile layout
+I was commissioned to create a new front-end for DC Jam Records (https://dcjamrecords.com/). The client had a pre-existing Wordpress site and I decided to keep WP in place as the back-end since he was already familiar with its interface. I started by creating mockups for mobile and desktop views on Figma (which you can view [here](https://www.figma.com/file/drkXFiZHK97yp6V7q9sis6/DC-Jam-Records?node-id=0%3A1) and presenting those to the client who gave his feedback. Once we were happy with the look of the site, I began to develop using Gatsby.js and Tailwind CSS. This was my first full-scale project using Tailwind (I also used it for my personal site) and I really enjoyed the development experience that Tailwind provided. After a few days the basic views of the site were complete and I was ready to begin ingesting data into to the site via graphQL. 
+This was where the problems began. I used Docker to create a local instance of the WP site (my first time working with Docker) and I had a lot of first-timer bugs and issues there. Things got worse when the time came to ingest the data from the live WP site, as I was having an extremely difficult time making the site's pre-existing custom post types visible in GraphQL. Ultimatley I had no choice but to simply re-create all the site's data manually to get all of the data to register which was frustrating. 
+For deployment, the current WP site was already deployed to cPanel. With the assistance of the current web host, I was able to deploy a static version of the site in the root public_html directory of cPanel. Since WP was installed in a subdirectory, /blog/, no extra configuration was needed in order to keep the WP site functioning as our backend. Eventually I would like to revisit this and redeploy the site as a node application with automatic builds after WP changes are detected as that would reduce overhead for me maintaining the site.
+This project was more difficult than I expected, but rewarding. This was my first time dealing with a real client with real-world specifications and that was extremely useful experience. I also gained significant hands-on experience with GraphQL, Wordpress, Docker, and cPanel. 
