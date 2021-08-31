@@ -34,7 +34,7 @@ const CatalogPage = ({data}) => {
             <MobileHeader expand={expand}/>
             <DesktopHeader/>
             <h2 className="font-display text-white txt-shadow text-center my-4 text-3xl">Catalog</h2>
-            <div className="flex flex-col justify-center sm:flex-row sm:flex-wrap">
+            <div className="flex flex-col items-center justify-center sm:flex-row sm:flex-wrap">
               {releases}
             </div>
         </div>

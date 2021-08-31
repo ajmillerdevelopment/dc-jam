@@ -34,7 +34,7 @@ const ArtistsPage = ({data}) => {
             <MobileHeader expand={expand}/>
             <DesktopHeader/>
             <h2 className="font-display text-white my-4 text-center txt-shadow text-3xl">Artists</h2>
-            <div className="flex flex-col justify-center sm:flex-row sm:flex-wrap">
+            <div className="flex flex-col items-center justify-center sm:flex-row sm:flex-wrap">
               {artists}
             </div>
         </div>
