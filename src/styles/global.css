@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .drawer-icon {
+        height: 30px;
+        width: 30px;
+    }
+    .logo-mobile {
+        width: 40px;
+        height: 100%;
+    }
+    #drawer {
+        transition: left 300ms;
+    }
+    .txt-shadow {
+        text-shadow: 2px 2px 4px black;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    .wp-content * {
+        font-family: 'Oswald', 'Arial', 'sans-serif';
+        color: white;
+        padding: 4px 10px;
+    }
+    .fab {
+        color: white;
+        text-shadow: 2px 2px 4px black;
+    }
+    @variants responsive {
+        .parallax {
+            background-image: url('../images/DCJam-StreetSign.jpg');
+            min-height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .blurred-bg {
+            background-image: url('../images/DCJam-StreetSignBlur.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .my-container {
+            padding: 20px;
+            background-color: rgba(0,0,0,0.8);
+            border-radius: 10px;
+        }
+        .my-container-red {
+            padding: 10px;
+            background-color: #EE3450;
+            border-radius: 10px;            
+        }
+        .max-h-custom {
+            max-height: 50rem;
+        }    
+        .tile {
+            height: 340px;
+            width: 450px;
+            overflow: hidden;
+        }
+        .tile a img {
+            min-height: 100%;
+            min-width: 100%;
+        }
+        .tile-small {
+            height: 250px;
+            width: 250px;
+            overflow: hidden;
+        }
+        .tile-small a img {
+            min-height: 100%;
+            min-width: 100%;
+        }
+    }
+}
