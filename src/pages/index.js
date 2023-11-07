@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
     };
     const scrollLock = () => {
         if (window.scrollY > window.innerHeight && !scrolled) {
-            document.getElementById("spacer").classList.remove("sm:block");
+            document.getElementById("spacer")?.classList.remove("sm:block");
             scrolled = true;
             window.scrollTo(0, 0);
             window.removeEventListener("scroll", scrollLock);

@@ -3,6 +3,9 @@ module.exports = {
     siteMetadata: {
         title: "dc-jam",
     },
+    flags: {
+        PARALLEL_QUERY_RUNNING: false,
+    },
     plugins: [
         "gatsby-plugin-postcss",
         "gatsby-plugin-react-helmet",
@@ -20,7 +23,7 @@ module.exports = {
         {
             resolve: "gatsby-source-wordpress",
             options: {
-                url: `https://dcjamrecords.com/blog/?graphql`,
+                url: `https://www.dcjamrecords.com/blog/graphql`,
                 debug: {
                     graphql: {
                         showQueryOnError: true,
