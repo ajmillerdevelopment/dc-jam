@@ -120,40 +120,6 @@ const IndexPage = ({ data }) => {
                         News
                     </h2>
 
-                    {/* Manually placed video article */}
-                    <article className="flex flex-col items-center m-4 w-full sm:p-5 sm:m-4 sm:w-5/6">
-                        <h3 className="font-display mb-2 top-2 z-10 text-center w-full txt-shadow text-3xl text-white">
-                            The Way Down by Porcupine
-                        </h3>
-                        <div className="wp-content sm:my-container w-full flex flex-col items-center my-2 sm:w-4/6 h-full">
-                            <p className="w-full">
-                                Brand new single and video entitled ‘The Way
-                                Down’ by Porcupine. New album and tour dates to
-                                follow soon.
-                            </p>
-                            <iframe
-                                width="360"
-                                height="180"
-                                src="https://www.youtube.com/embed/N_BNAqR33Xc"
-                                title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                                className="sm:hidden"
-                            ></iframe>
-                            <iframe
-                                width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/N_BNAqR33Xc"
-                                title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                                className="hidden sm:block"
-                            ></iframe>
-                        </div>
-                    </article>
-
                     {articles}
                     <div className="sm:flex sm:flex-col sm:items-center">
                         <h2 className="font-display text-3xl text-white hidden txt-shadow sm:block">
